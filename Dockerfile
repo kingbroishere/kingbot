@@ -1,15 +1,22 @@
-FROM python:3.10.8-slim-buster
+# Use full Python image instead of slim
+FROM python:3.10
 
-WORKDIR /Jisshu-filter-bot
-RUN chmod 777 /Jisshu-filter-bot
+# Avoid interactive prompts
+ENV DEBIAN_FRONTEND=noninteractive
 
-RUN apt update && apt install -y --no-install-recommends git \
-    && rm -rf /var/lib/apt/lists/*
+# Install git (if needed)
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git && \
+    rm -rf /var/lib/apt/lists/*
 
-COPY requirements.txt .
+# Set working directory
+WORKDIR /app
+
+# Copy your project into the image
+COPY . .
+
+# Install Python dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-COPY . .
-RUN chmod +x start.sh
-
-CMD ["bash", "start.sh"]
+# Start your bot
+CMD ["python", "bot.py"]
