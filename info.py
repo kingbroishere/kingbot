@@ -50,7 +50,7 @@ DATABASE_NAME = environ.get("DATABASE_NAME", "Cluster0")
 
 # Files index database url
 FILES_DATABASE = environ.get("FILES_DATABASE", "-1003034407154")
-COLLECTION_NAME = environ.get("COLLECTION_NAME", "kingbro")
+COLLECTION_NAME = environ.get("COLLECTION_NAME", "jisshu")
 
 # Other Channel's
 SUPPORT_GROUP = int(environ.get("SUPPORT_GROUP", "-1002987699696"))
