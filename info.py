@@ -160,11 +160,11 @@ IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", f"{script.IMDB_TEMPLATE_TXT}")
 LONG_IMDB_DESCRIPTION = is_enabled("LONG_IMDB_DESCRIPTION", False)
 PROTECT_CONTENT = is_enabled("PROTECT_CONTENT", False)
 SPELL_CHECK = is_enabled("SPELL_CHECK", True)
-LINK_MODE = is_enabled("LINK_MODE", True)
+LINK_MODE = is_enabled("LINK_MODE", False)
 TMDB_API_KEY = environ.get("TMDB_API_KEY", "")
 
 # Online Streaming And Download
-STREAM_MODE = bool(environ.get("STREAM_MODE", True))  # Set True or Flase
+STREAM_MODE = bool(environ.get("STREAM_MODE", False))  # Set True or Flase
 
 MULTI_CLIENT = False
 SLEEP_THRESHOLD = int(environ.get("SLEEP_THRESHOLD", "60"))
